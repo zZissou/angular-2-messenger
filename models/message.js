@@ -1,10 +1,9 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var messageSchema = new Schema({
-    user: {type: Schema.Types.ObjectId, ref: 'User'},
-    name: {type: String, required: true},
-    songs: [{type: Schema.Types.ObjectId, ref: 'Song'}]
+var schema = new Schema({
+    content: {type: String, required: true},
+    user: {type: Schema.Types.ObjectId, ref: 'User'}
 });
 
-module.exports = mongoose.model('Message', messageSchema);
+module.exports = mongoose.model('Message', schema);
