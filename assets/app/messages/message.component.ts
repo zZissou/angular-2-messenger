@@ -18,7 +18,6 @@ import { MessageService } from "./message.service";
       text-align: right;
       font-size; 12px;
       width: 19%;
-      float: right;
     }
   `]
 })
@@ -36,5 +35,9 @@ export class MessageComponent {
       .subscribe(
         result => console.log(result)
       );
+  }
+
+  belongsToUser() {
+    return localStorage.getItem('userId') == this.message.userId;
   }
 }
